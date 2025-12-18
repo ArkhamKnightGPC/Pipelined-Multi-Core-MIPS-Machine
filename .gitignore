@@ -1,0 +1,4 @@
+# GHDL/iverilog simulation files
+*.vcd
+*.cf
+*.out
