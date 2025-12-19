@@ -1,3 +1,4 @@
+`timescale 1ns/1ns
 module tb_equality_check;
 
 localparam int N = 32;

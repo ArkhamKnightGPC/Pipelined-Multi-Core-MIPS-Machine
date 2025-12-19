@@ -1,3 +1,4 @@
+`timescale 1ns/1ns
 module tb_nmux21;
 
 parameter int N = 32;
