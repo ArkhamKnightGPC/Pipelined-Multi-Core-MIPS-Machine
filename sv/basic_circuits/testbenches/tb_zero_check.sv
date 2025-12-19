@@ -2,7 +2,7 @@
 module tb_zero_check;
 
 localparam int N = 32;
-logic[N-1:0] a = '0;
+logic [N-1:0] a = '0;
 logic zero;
 logic nzero;
 

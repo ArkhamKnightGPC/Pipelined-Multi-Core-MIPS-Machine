@@ -2,8 +2,8 @@
 module tb_equality_check;
 
 localparam int N = 32;
-logic[N-1:0] a = '0;
-logic[N-1:0] b = '0;
+logic [N-1:0] a = '0;
+logic [N-1:0] b = '0;
 logic zero;
 logic nzero;
 
