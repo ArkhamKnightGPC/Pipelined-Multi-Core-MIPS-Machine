@@ -1,3 +1,4 @@
+`timescale 1ns/1ns
 module tb_nadder;
 
 parameter int N = 32;
