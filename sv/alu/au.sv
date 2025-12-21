@@ -19,6 +19,6 @@ nadder #(
     .cout(cout)
 );
 assign neg = (~u & (a[N-1] ^ b_checked[N-1] ^ cout)) | (u & sub & ~cout);
-assign ovf = ~u & (s[N-1] & cout);
+assign ovf = (~u & ((s[N-1] ^ a[N-1]) & ~(a[N-1] ^ b[N-1])));
 
 endmodule

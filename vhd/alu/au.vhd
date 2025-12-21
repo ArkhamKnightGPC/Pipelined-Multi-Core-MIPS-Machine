@@ -32,5 +32,5 @@ begin
             cout => cout
         );
     neg <= ((not u) and (a(N-1) xor b_checked(N-1) xor cout)) or (u and sub and (not cout));
-    ovf <= (not u) and (s(N-1) and cout);
+    ovf <= (not u) and ((s(N-1) xor a(N-1)) and not(a(N-1) xor b(N-1)));
 end architecture;
