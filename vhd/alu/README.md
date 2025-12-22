@@ -10,6 +10,18 @@ Important notes on certain design choices.
 - control input **sub** indicates whether input **b** should de subtracted or added to input **a**
 - overflow bit **ovf** is computed only for u=1
 
+## Logical unit (logical_unit.vhd)
+
+- control inputs **af[1:0]** and **i** encode the operation to be performed
+
+|  af   |   i   |              res                      |
+| :---  | :---: |             :----:                    |
+|  00   |       |   $a \land b$                         |
+|  01   |       |   $a \lor b$                          |
+|  10   |       |   $a \oplus b$                        |
+|  11   |   0   |   $\overline{a \lor b}$               |
+|  11   |   1   |   $b[\frac{n}{2}-1:0]0^\frac{n}{2}$   |
+
 ## Arithmetic logical unit (alu.vhd)
 
 - width **N** is assumed to be even.
