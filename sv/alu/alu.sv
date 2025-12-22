@@ -42,7 +42,6 @@ logic [N-1:0] cmp_res;
 assign cmp = neg;
 assign cmp_res = { {(N-1){1'b0}}, cmp };
 
-
 nmux21 #(.N(N)) g2 (
     .z(alures),
     .a(sel_arith_logic),
