@@ -1,14 +1,12 @@
 # Shift unit
 
-The shift unit provides constructions to implement 5 different types of shifts.
+The shift unit provides constructions to implement 3 different types of shifts.
 The designs presented incrementally build these operations.
 
 |            op             |                def                |
 |           :---            |               :---:               |
 | cyclical left shift       | $slc(a,i) = a[n-i-1:0]a[n-1:n-i]$ |
 | cyclical right shift      | $src(a,i) = a[i-1:0]a[n-1:i]$     |
-| logical left shift        | $sll(a,i) = a[n-i-1:0]0^i$        |
-| logical right shift       | $srl(a,i) = 0^ia[n-1:i]$          |
 | arithmetic right shift    | $sra(a,i) = a_{n-1}^ia[n-1:i]$    |
 
 ## (n,b)-cyclic left shifter (bslc.vhd)
@@ -17,7 +15,7 @@ The designs presented incrementally build these operations.
 - **b** is fixed as a module parameter and **2^b** denotes the *shift distance*
 - input **s** is an enable signal
 
-# n-cyclic left shifter (slc.vhd)
+## n-cyclic left shifter (slc.vhd)
 
 - constructed with a stack of (n,b)-SLCs
 - n-SLC performs cyclic left shift for all shift distances
@@ -29,14 +27,10 @@ The designs presented incrementally build these operations.
 
 ## n-shift unit (su.vhd)
 
-- performs all five types of shifts
 - control input **sf** determines type of shift
 
-|   sf   |    sures    |
-|  :---  |    :---:    |
-|   000  | $slc(a, b)$ |
-|   010  | $src(a, b)$ |
-|   100  | $sll(a, b)$ |
-|   110  | $srl(a, b)$ |
-|   111  | $sra(a, b)$ |
-
+|  sf   |    sures    |
+| :---  |    :---:    |
+|   00  | $slc(a, b)$ |
+|   10  | $src(a, b)$ |
+|   11  | $sra(a, b)$ |
