@@ -117,7 +117,7 @@ Syntax
 
 Syntax
 - opcode **opc** = I[31:26]
-- instruction index**iindex** = I[25:0]
+- instruction index **iindex** = I[25:0]
 
 #### Jump instructions
 
