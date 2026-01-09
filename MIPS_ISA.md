@@ -35,11 +35,17 @@ Syntax
 | 100 000    |      lb     |
 | 100 001    |      lh     |
 | 100 011    |      lw     |
-| 100 000    |      lbu    |
-| 100 001    |      lhu    |
-| 100 000    |      sb     |
-| 100 001    |      sh     |
-| 100 000    |      sw     |
+| 100 100    |      lbu    |
+| 100 101    |      lhu    |
+| 101 000    |      sb     |
+| 101 001    |      sh     |
+| 101 011    |      sw     |
+
+For all data transfer instructions, the processor calculates the *effective address* **ea** the same way:
+
+$$Effective Address = Reg[rs] + SignExt(imm)$$
+
+Write back happens at register **rt**.
 
 #### Arithmetic, logical and test-set operations
 
