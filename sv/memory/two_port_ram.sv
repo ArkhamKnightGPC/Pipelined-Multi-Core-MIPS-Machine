@@ -8,9 +8,10 @@ module two_port_ram #(parameter address_length=32, parameter word_length=64) (
 localparam num_words = 2**address_length;
 logic [word_length-1:0] mem [0:num_words-1];
 
-initial begin
+//uncomment to run tb_two_port_ram simulation
+/*initial begin
     $readmemh("two_port_ram_init.hex", mem);
-end
+end*/
 
 always_ff @(posedge clk) begin
     if (wren_a)
